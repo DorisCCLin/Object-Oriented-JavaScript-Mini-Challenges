@@ -27,13 +27,13 @@ var la = new Photo('home', 'LA');
 var sf = new Photo('house', 'SF');
 
 function Album(){
-	this.photoAlbums = [];
+	this.photoAlbum = [];
     this.addPhoto = function(photo){
-	    this.photoAlbums.push(photo)
+	    this.photoAlbum.push(photo)
 	}
 	this.listPhotos = function(){
-	    for(var i = 0;i<this.photoAlbums.length;i++){
-	    	console.log(this.photoAlbums[i])
+	    for(var i = 0;i<this.photoAlbum.length;i++){
+	    	console.log(this.photoAlbum[i])
 	    }
 	}   
 }
@@ -94,7 +94,25 @@ function School(){
 
 var nycda = new School();
 
+// ---------- Extra ------------
 
+var cat1 = new Photo('img/cats/cat1.jpg', 'Philly');
+var cat2 = new Photo('img/cats/cat2.jpg', 'Taipei');
+var cat3 = new Photo('img/cats/cat3.jpg', 'New York');
+
+var cats = new Album();
+
+cats.addPhoto(cat1);
+cats.addPhoto(cat2);
+cats.addPhoto(cat3);
+
+var photo1=document.querySelector('#photo1');
+var photo2=document.querySelector('#photo2');
+var photo3=document.querySelector('#photo3');
+
+photo1.style.backgroundImage = "url('" + cats.photoAlbum[0].filename + "')"
+photo2.style.backgroundImage = "url('" + cats.photoAlbum[1].filename + "')"
+photo3.style.backgroundImage = "url('" + cats.photoAlbum[2].filename + "')"
 
 
 
